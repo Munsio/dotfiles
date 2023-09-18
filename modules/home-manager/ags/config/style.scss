@@ -1,0 +1,8 @@
+/**
+* This base style.scss is to reset everything, window styling can be found under ./widget/...
+**/
+// Reset everything
+* {
+    all: unset;
+    font-family: FiraCode, "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+}

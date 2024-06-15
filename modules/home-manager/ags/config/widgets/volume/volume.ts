@@ -1,25 +1,22 @@
 import wireplumber from 'services/wireplumber'
 
-const icons = {
-    101: "overamplified",
-    67: "high",
-    34: "medium",
-    1: "low",
-    0: "muted",
+const speakerIcons = {
+    60: "full",
+    1: "mid",
+    0: "off",
 }
 
 function getSpeakerIcon() {
     if (wireplumber.speakerMuted) {
-        return `audio-volume-muted-blocking`
+        return `custom-volume-mute-symbolic`
     }
-
-    const icon = [101, 67, 34, 1, 0].find(threshold => threshold <= wireplumber.speakerVolume)
-    return `audio-volume-${icons[icon]}-symbolic`
+    const icon = [60, 1, 0].find(threshold => threshold <= wireplumber.speakerVolume)
+    return `custom-volume-${speakerIcons[icon]}-symbolic`
 }
 
 const speakerIcon = () => (Widget.Button({
     child: Widget.Icon({
-        class_name: "icon",
+        class_name: "volumeIcon",
         icon: Utils.watch(getSpeakerIcon(), wireplumber, getSpeakerIcon),
     }),
     on_primary_click: () => { wireplumber.toggleSpeakerMuted() }
@@ -48,11 +45,10 @@ const speakerSlider = () => {
 
 function getMicIcon() {
     if (wireplumber.micMuted) {
-        return `mic-ready`
+        return `custom-microphone-off-symbolic`
     }
 
-    const icon = [101, 67, 34, 1, 0].find(threshold => threshold <= wireplumber.micVolume)
-    return `microphone-sensitivity-${icons[icon]}`
+    return `custom-microphone-symbolic`
 }
 
 const micIcon = () => (Widget.Button({
@@ -91,7 +87,7 @@ const Volume = () => {
         class_name: "speaker",
         css: "min-width: 20px",
         child: Widget.Box({
-            children: [speakerIcon(), sSlider]
+            children: [sSlider, speakerIcon()]
         }),
     })
     speakerBox.connect("enter-notify-event", () => {
@@ -106,7 +102,7 @@ const Volume = () => {
         class_name: "mic",
         css: "min-width: 20px",
         child: Widget.Box({
-            children: [micIcon(), mSlider]
+            children: [mSlider, micIcon()]
         }),
     })
     micBox.connect("enter-notify-event", () => {

@@ -1,5 +1,5 @@
 import "session"
-import "style"
+import "style/style"
 import Bar from "windows/bar/Bar"
 import { addWindows, watchMonitors } from "lib/utils"
 
@@ -23,3 +23,5 @@ Utils.idle(() => {
 
 App.config({
 });
+
+App.addIcons(`${App.configDir}/assets/icons`)

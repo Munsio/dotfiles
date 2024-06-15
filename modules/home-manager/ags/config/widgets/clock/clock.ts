@@ -6,6 +6,7 @@ const clock = Variable(GLib.DateTime.new_now_local(), {
 
 const hour = Utils.derive([clock], (c) => c.format("%H") || "")
 const minute = Utils.derive([clock], (c) => c.format("%M") || "")
+const date = Utils.derive([clock], (c) => c.format("%d.%m.%y") || "")
 
 // (defpoll clock_hour:interval "5m" "date +\%H")
 // (defpoll clock_minute:interval "5s" "date +\%M")
@@ -25,7 +26,8 @@ const Clock = () => (Widget.Box({
             class_name: "minute",
             label: minute.bind(),
         }),
-    ]
+    ],
+    tooltip_text: date.bind(),
 }))
 
 

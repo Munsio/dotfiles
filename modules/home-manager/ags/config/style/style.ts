@@ -4,14 +4,15 @@ async function resetCss() {
         const scss = `${TMP}/main.scss`
         const css = `${TMP}/main.css`
 
-        const base_style = `${App.configDir}/style.scss`
+        // const reset_style = `${App.configDir}/reset.scss`
+        // const base_style = `${App.configDir}/style.scss`
         // Add generated color scheme
         const color_scheme = `${Utils.HOME}/.cache/wal/colors.scss`
 
         // Read all scss files from the widget directory and append them.
         const fd = Utils.exec(`find ${App.configDir}/ -type f -name "*.scss"`)
         const files = fd.split(/\s+/)
-        const imports = [base_style, color_scheme, ...files].map(f => `@import '${f}';`)
+        const imports = [color_scheme, ...files].map(f => `@import '${f}';`)
 
         // Add imports
         await Utils.writeFile(imports.join("\n"), scss)

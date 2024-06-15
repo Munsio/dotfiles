@@ -3,15 +3,13 @@
         font-size: 20px;
 
         .speaker box {
-            padding-left: 10px;
+            margin-left: 10px;
         }
-
-        .mic {}
 
         scale {
             min-height: 10px;
             min-width: 70px;
-            margin-left: 10px;
+            margin-right: 10px;
 
             trough {
                 all: unset;

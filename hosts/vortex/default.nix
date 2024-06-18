@@ -17,6 +17,7 @@
   modules = {
     greetd.enable = true;
     hyprland.enable = true;
+    moonlight.enable = true;
   };
 
   boot = {

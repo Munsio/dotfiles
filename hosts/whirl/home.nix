@@ -43,5 +43,6 @@
     rofi.enable = true;
     starship.enable = true;
     vscode.enable = true;
+    discord.enable = true;
   };
 }

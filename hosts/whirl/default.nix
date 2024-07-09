@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.common-cpu-intel-kaby-lake
+    inputs.nixos-hardware.nixosModules.common-gpu-intel-kaby-lake
     ./hardware-configuration.nix
 
     outputs.nixosModules

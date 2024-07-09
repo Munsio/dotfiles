@@ -54,6 +54,7 @@
       nixd
       nixpkgs-fmt
       direnv
+      sops
     ];
   };
 

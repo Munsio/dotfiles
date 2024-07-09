@@ -5,9 +5,9 @@
 
   imports = [
     ./greetd.nix
-    ./nh.nix
     ./hyprland.nix
     ./moonlight.nix
+    ./nh.nix
   ];
 
 }

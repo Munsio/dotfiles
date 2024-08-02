@@ -21,6 +21,7 @@
     ./hyprpaper.nix
     ./kubernetes.nix
     ./mako.nix
+    ./nvim
     ./obsidian.nix
     ./pywal
     ./rofi.nix

@@ -44,5 +44,6 @@
     starship.enable = true;
     vscode.enable = true;
     discord.enable = true;
+    nvim.enable = true;
   };
 }

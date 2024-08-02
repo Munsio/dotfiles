@@ -51,7 +51,7 @@
       usbutils
       vim
       wget
-      nixd
+      unstable.nixd
       nixpkgs-fmt
       direnv
       sops
@@ -75,6 +75,7 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.unstable-packages
+      inputs.nix-vscode-extensions.overlays.default
     ];
     config.allowUnfree = true;
   };

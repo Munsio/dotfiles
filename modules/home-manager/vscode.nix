@@ -15,11 +15,13 @@ in
         enable = true;
         enableUpdateCheck = false;
         package = pkgs.unstable.vscode;
-        extensions = with pkgs.vscode-extensions; [
+        extensions = with pkgs.vscode-marketplace; [
           # Not all extensions are available
           github.vscode-github-actions
           golang.go
           redhat.vscode-yaml
+          jnoortheen.nix-ide
+          symflower.symflower
         ];
         userSettings = {
           "workbench.startupEditor" = "none";

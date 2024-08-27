@@ -27,6 +27,7 @@
     ./rofi.nix
     ./starship.nix
     ./vscode.nix
+    ./yazi.nix
   ];
 
 }

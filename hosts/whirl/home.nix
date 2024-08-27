@@ -45,5 +45,6 @@
     vscode.enable = true;
     discord.enable = true;
     nvim.enable = true;
+    yazi.enable = true;
   };
 }

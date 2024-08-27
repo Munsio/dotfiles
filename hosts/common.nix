@@ -46,16 +46,21 @@
   # Environment and standard packages
   environment = {
     systemPackages = with pkgs; [
+      direnv
       killall
+      nixpkgs-fmt
       pciutils
+      sops
+      unstable.nixd
       usbutils
       vim
       wget
-      unstable.nixd
-      nixpkgs-fmt
-      direnv
-      sops
     ];
+  };
+
+  # Programs
+  programs = {
+    command-not-found.enable = false;
   };
 
   # USB automount

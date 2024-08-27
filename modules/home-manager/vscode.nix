@@ -52,6 +52,9 @@ in
           "nix.serverPath" = "nixd";
           "nix.serverSettings" = {
             "nixd" = {
+              "formatting" = {
+                "command" = ["nixpkgs-fmt"];
+              };
               "diagnostic" = {
                 "suppress" = [
                   "sema-escaping-with"

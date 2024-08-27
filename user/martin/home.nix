@@ -16,7 +16,7 @@ in
     homeDirectory = "/home/martin";
 
     sessionVariables = {
-      TERMINAL = "alacritty";
+      TERMINAL = "wezterm";
       EDITOR = "vim";
     };
   };

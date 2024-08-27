@@ -80,6 +80,7 @@
   nixpkgs = {
     overlays = [
       outputs.overlays.unstable-packages
+      outputs.overlays.flake-wezterm
       inputs.nix-vscode-extensions.overlays.default
     ];
     config.allowUnfree = true;

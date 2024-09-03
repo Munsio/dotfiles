@@ -47,6 +47,7 @@
   environment = {
     systemPackages = with pkgs; [
       direnv
+      dmidecode
       killall
       nixpkgs-fmt
       pciutils
@@ -62,6 +63,8 @@
   programs = {
     command-not-found.enable = false;
   };
+
+  services.fwupd.enable = true;
 
   # USB automount
   services.devmon.enable = true;

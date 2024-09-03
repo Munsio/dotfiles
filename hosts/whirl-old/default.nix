@@ -7,7 +7,7 @@
 
 {
   imports = [
-    inputs.nixos-hardware.nixosModules.framework-13-7040-amd
+    inputs.nixos-hardware.nixosModules.common-gpu-intel-kaby-lake
     ./hardware-configuration.nix
 
     outputs.nixosModules
@@ -24,7 +24,7 @@
   boot = {
     #kernelPackages = pkgs.linuxPackages_latest; # Latest kernel
 
-    initrd.luks.devices."luks-c5ef7dea-9875-4d93-a0a4-b063c31d44e2".device = "/dev/disk/by-uuid/c5ef7dea-9875-4d93-a0a4-b063c31d44e2";
+    initrd.luks.devices."luks-e561fade-91e3-4e86-aa7f-36a4a6bb68ca".device = "/dev/disk/by-uuid/e561fade-91e3-4e86-aa7f-36a4a6bb68ca";
 
     loader = {
       systemd-boot = {

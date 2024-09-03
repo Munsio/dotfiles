@@ -1,0 +1,23 @@
+{
+	"Create module": {
+		"scope": "nix",
+		"body": [
+			"#",
+			"# $1 - $2",
+			"#",
+			"",
+			"{ config, lib, ... }: with lib;",
+			"let",
+			"\tcfg = config.modules.$3;",
+			"in",
+			"{",
+			"\toptions.modules.$3 = { enable = mkEnableOption \"$3\"; };",
+			"",
+			"\tconfig = mkIf cfg.enable {",
+			"\t$0",
+			"\t};",
+			"}",
+		],
+		"description": "NixOS or home-manager toggleable module"
+	}
+}

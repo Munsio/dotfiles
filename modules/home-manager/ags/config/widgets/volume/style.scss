@@ -1,0 +1,30 @@
+.bar {
+    .volume {
+        font-size: 20px;
+
+        .speaker box {
+            margin-left: 10px;
+        }
+
+        scale {
+            min-height: 10px;
+            min-width: 70px;
+            margin-right: 10px;
+
+            trough {
+                all: unset;
+                background-color: #22242b;
+                box-shadow: 0 2px 3px 2px #16171b;
+                border-radius: 16px;
+                min-height: 10px;
+                min-width: 70px;
+
+                highlight,
+                progress {
+                    background-image: linear-gradient(to right, $color2 30%, $color3 50%, $color4 100% *50);
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

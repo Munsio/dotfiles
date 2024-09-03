@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+direction=$1
+current=$2
+workspaces=$3
+
+readarray -t workspaces < <(echo $3 | jq 'to_entries[] | .value.id|tonumber')
+
+for i in ${!workspaces[@]}; do
+	id=${workspaces[$i]}
+	if [[ $id -eq $current ]]; then
+		prev=${workspaces[($i - 1)]}
+		next=${workspaces[($i + 1)]}
+	fi
+done
+
+if test "$direction" = "down";
+then
+	if [ -z "$prev" ]; # If prev is empty we jump to the last item
+	then
+		prev=${workspaces[-1]}
+	fi
+
+	echo "jumping to prev: $prev"
+	hyprctl dispatch workspace $prev
+elif test "$direction" = "up";
+then
+	if [ -z "$next" ]; # If next is empty we jump to the first item
+	then
+		next=${workspaces[0]}
+	fi
+
+	echo "jumping to next: $next"
+	hyprctl dispatch workspace $next
+fi

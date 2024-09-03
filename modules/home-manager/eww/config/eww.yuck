@@ -1,0 +1,145 @@
+;; Variables
+(defvar eww "eww -c $HOME/.config/eww")
+
+;;;; Clock
+(defpoll clock_hour :interval "5m" "date +\%H")
+(defpoll clock_minute :interval "5s" "date +\%M")
+
+;;;; Volume
+(defvar vol_reveal false)
+(defpoll volume_percent :interval "1s" "bash scripts/get-volume")
+(defpoll volume_muted :interval "1s" "bash scripts/is-muted")
+
+;;;; Music
+(defvar music_reveal false)
+(deflisten music_song :initial "" "playerctl --follow metadata --format '{{ trunc(title, 20) }}' || true")
+(deflisten music_status "playerctl --follow status || true")
+
+;;;; Workspaces
+(deflisten workspaces :initial "[]" "bash scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash scripts/get-active-workspace")
+
+;; Definition of the Widgets
+(defwidget clock_module []
+    (box :class "module" :space-evenly "false" :orientation "h" :spacing "3"
+        (label :text clock_hour :class "clock_time_class")
+        (label :text "⋮" :class "clock_time_sep")
+        (label :text clock_minute :class "clock_minute_class")
+    )
+)
+
+(defwidget volume []
+    (eventbox :onhover "${eww} update vol_reveal=true" :onhoverlost "${eww} update vol_reveal=false"
+        (box :class "module" :space-evenly "false" :orientation "h" :spacing "3"
+            (button :onclick "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" :class "volume_icon" "${volume_muted == "true" ? "" : ""}")
+            (revealer :transition "slideleft" :reveal vol_reveal :duration "350ms"
+                (scale
+                    :class "volbar"
+                    :value volume_percent
+                    :orientation "h"
+                    :tooltip "${volume_percent}%"
+                    :max 100
+                    :min 0
+                    :onchange "wpctl set-volume @DEFAULT_AUDIO_SINK@ {}%" 
+                )
+            )
+        )
+    )
+)
+
+(defwidget workspaces []
+    (eventbox :onscroll "bash scripts/change-active-workspace {} ${current_workspace} '${workspaces}'"
+        (box :class "module workspaces-widget" :space-evenly true
+            (label :text "${workspaces}${current_workspace}" :visible false)
+            (for workspace in workspaces
+                (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+                    (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""}"
+                        (label :text "")
+                    )
+                )
+            )
+        )
+    )
+)
+
+(defwidget music [] 
+    (eventbox :onhover "${eww} update music_reveal=true" :onhoverlost "${eww} update music_reveal=false"
+        (box :class "module" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false" 
+			;(box :class "song_cover_art" :vexpand "false" :hexpand "false" :style "background-image: url('${cover_art}');")
+			(button :class "song" :wrap "true" music_song)
+	        (revealer :transition "slideright" :reveal music_reveal :duration "350ms"
+                (box :vexpand "false" :hexpand "false" :oreintation "h" 
+                    (button :class "song_btn_prev" :onclick "playerctl previous" "")
+					(button :class "song_btn_play" :onclick "playerctl play-pause" music_status)
+					(button :class "song_btn_next" :onclick "playerctl next" "")
+                )
+            )
+        )
+    )
+)
+
+(defwidget sep []
+    (box :vexpand "false" :hexpand "false"
+        (label :class "separator" :text "|")
+    )
+)
+
+;; Definition of the bar sections
+(defwidget left []
+	(box :orientation "h" :space-evenly false :halign "start" :class "left_modules"
+        (workspaces)
+    )
+)
+
+(defwidget center []
+	(box :orientation "h" :space-evenly false :halign "center" :class "center_modules"
+        (music)
+    )
+)
+
+(defwidget right []
+	(box :orientation "h" :space-evenly false :halign "end" :class "right_modules"
+        (volume)
+        (sep)
+        (clock_module)
+    )
+)
+
+(defwidget bar_1 []
+    (box :class "bar_class" :orientation "h"
+        (left)
+        (center)
+        (right)
+    )
+)
+
+;; Definition of the Window
+(defwindow bar0
+    :monitor 0
+    :geometry (geometry
+        :x "0%"
+        :y "9px"
+        :width "100%"
+        :height "30px"
+        :anchor "top center"
+    )
+    :stacking "fg"
+    :exclusive true
+    :windowtype "dock"
+    (bar_1)
+)
+
+(defwindow bar1
+    :monitor 1
+    :geometry (geometry
+        :x "0%"
+        :y "9px"
+        :width "100%"
+        :height "30px"
+        :anchor "top center"
+    )
+    :stacking "fg"
+    :exclusive true
+    :windowtype "dock"
+    (bar_1)
+)

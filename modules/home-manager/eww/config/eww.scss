@@ -1,0 +1,99 @@
+@import "/home/martin/.cache/wal/colors.scss";
+
+* {
+    all: unset;
+    font-family: FiraCode, "Font Awesome 6 Free", Roboto, Helvetica, Arial, sans-serif;
+}
+
+
+/** General **/
+.bar_class {
+    //background-color: #0f0f17;
+    background-color: $background;
+    border-radius: 16px;
+    margin: 0px 10px;
+}
+
+.module {
+    margin: 0px 0px 0px 0px;
+    border-radius: 10px 16px 0px 10px;
+    color: $foreground;
+}
+
+.separator {
+    color: $color8;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0px 8px 0px 8px;
+}
+
+/** tooltip!! **/
+tooltip.background {
+    //background-color: #0f0f17;
+    background-color: $background;
+    font-size: 18;
+    border-radius: 10px;
+    color: $foreground;
+}
+
+tooltip label {
+    margin: 6px;
+}
+
+scale trough {
+    all: unset;
+    background-color: #22242b;
+    box-shadow: 0 2px 3px 2px #06060b;
+    border-radius: 16px;
+    min-height: 10px;
+    min-width: 70px;
+    margin: 0px 10px 0px 0px;
+}
+
+/** Widgets **/
+
+.clock_time_sep {
+    font-size: 16;
+    margin: 0px 4px 1px 4px;
+}
+
+.clock_time_class,
+.clock_minute_class {
+    font-size: 23;
+}
+
+
+.clock_minute_class {
+    margin: 0px 20px 0px 3px;
+}
+
+.clock_time_class {
+    font-weight: bold;
+    margin: 0px 5px 0px 0px;
+}
+
+.volbar trough highlight {
+    background-image: linear-gradient(to right, $color2 30%, $color3 50%, $color4 100% *50);
+    border-radius: 10px;
+}
+
+.volbar {
+    margin-left: 10px;
+}
+
+.volume_icon {
+    font-size: 18;
+}
+
+.workspaces-widget {
+    margin-left: 10px;
+
+    .workspace-entry {
+        min-height: 20px;
+        min-width: 20px;
+    }
+
+    .current {
+        font-weight: 900;
+    }
+}

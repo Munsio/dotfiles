@@ -60,6 +60,7 @@ in
           "$mod, L, exec, killall rofi || rofi -show power-menu"
           "ALT, Space, exec, killall rofi || rofi -show drun"
           "$mod SHIFT, E, exec, kill $(pidof ags) || ags"
+          "$mod CTRL, P, exec, toggleSonyHeadphones"
 
           # General window/behaviour binding
           "$mod, Q, killactive,"

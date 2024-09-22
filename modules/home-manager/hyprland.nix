@@ -2,7 +2,7 @@
 # Hyprland - Hyprland Desktop configuration
 #
 
-{ config, lib, ... }: with lib;
+{ config, lib, pkgs, ... }: with lib;
 let
   cfg = config.modules.hyprland;
 in
@@ -17,6 +17,8 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
+			systemdIntegration = true;
+
       settings = {
         # Variables
         "$mod" = "SUPER";

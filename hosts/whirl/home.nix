@@ -30,13 +30,14 @@
       enable = true;
       monitor = [
         #"eDP-1,disable"
-        "desc:Iiyama North America PL2730H 1153603502279,1920x1080@60,0x0,1"
-        "desc:AOC U34G2G1 0x00001BA3,3440x1440@99.98,-760x1080,1"
+        #"desc:Iiyama North America PL2730H 1153603502279,1920x1080@60,0x0,1"
+        #"desc:AOC U34G2G1 0x00001BA3,3440x1440@99.98,-760x1080,1"
         #"desc:AOC U34G2G1 0x00001BA3,highrr,-760x1080,1"
       ];
     };
     hyprlock.enable = true;
     hyprpaper.enable = true;
+		kanshi.enable = true;
     kubernetes.enable = true;
     mako.enable = true;
     obsidian.enable = true;

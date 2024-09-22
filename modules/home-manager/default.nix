@@ -19,6 +19,7 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./hyprpaper.nix
+		./kanshi.nix
     ./kubernetes.nix
     ./mako.nix
     ./nvim

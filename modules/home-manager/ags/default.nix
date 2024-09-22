@@ -25,9 +25,17 @@ in
       };
     };
 
-    home.packages = [
-      pkgs.bun
-      pkgs.sassc
-    ];
+		xdg.configFile.ags = {
+			enable = true;
+	    source = config.lib.meta.mkMutableSymlink ./config;
+		  target = "ags";
+		};
+
+		home = {
+			packages = [
+        pkgs.bun
+        pkgs.sassc
+      ];
+    };
   };
 }

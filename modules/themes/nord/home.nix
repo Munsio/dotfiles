@@ -20,15 +20,7 @@
     libsForQt5.breeze-icons
 
     ## Fonts
-    fira-mono
-    fira-code
-    fira-code-symbols
-    font-awesome
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    })
+    nerdfonts
   ];
 
   home.pointerCursor = {

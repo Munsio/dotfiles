@@ -13,5 +13,9 @@ in
       enable = true;
       package = pkgs.unstable.go;
     };
+
+		home.packages = with pkgs; [
+			gopls
+		];
   };
 }

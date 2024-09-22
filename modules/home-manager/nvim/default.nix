@@ -12,27 +12,32 @@ in
 
   config = mkIf cfg.enable {
     programs = {
-        neovim = {
-          enable = true;
+      neovim = {
+        enable = true;
 
-          viAlias = true;
-          vimAlias = true;
-          vimdiffAlias = true;
+        viAlias = true;
+        vimAlias = true;
+        vimdiffAlias = true;
 
-          extraPackages = with pkgs; [
-            
-          ];
+        extraPackages = with pkgs; [
+					lua-language-server
+					nil
+					stylua
+					ripgrep
+					zig
+        ];
 
-          plugins = with pkgs.vimPlugins; [
+				plugins = with pkgs.vimPlugins; [
+					
+				];
 
-            {
-              plugin = neo-tree-nvim;
-              config = toLuaFile ./plugins/neo-tree.lua;
-            }
-            nvim-web-devicons
+      };
+    };
 
-          ];
-        };
+    xdg.configFile.neovim = {
+      enable = true;
+      source = config.lib.meta.mkMutableSymlink ./config;
+      target = "nvim";
     };
   };
 }

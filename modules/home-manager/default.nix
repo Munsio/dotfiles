@@ -28,6 +28,7 @@
     ./rofi.nix
     ./starship.nix
     ./vscode.nix
+		./waybar
     ./wezterm/wezterm.nix
     ./yazi.nix
   ];

@@ -12,7 +12,7 @@ in
   config = mkIf cfg.enable {
     services.hypridle = {
       enable = true;
-      package = pkgs.unstable.hypridle;
+      package = pkgs.hypridle;
       settings = {
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";

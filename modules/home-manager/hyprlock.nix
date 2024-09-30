@@ -11,7 +11,7 @@ in
   config = mkIf cfg.enable {
     programs.hyprlock = {
       enable = true;
-      package = pkgs.unstable.hyprlock;
+      package = pkgs.hyprlock;
       settings = {
         general = {
           disable_loading_bar = true;

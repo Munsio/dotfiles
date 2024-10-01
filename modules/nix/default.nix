@@ -8,6 +8,7 @@
     ./hyprland.nix
     ./moonlight.nix
     ./nh.nix
+		./printer.nix
   ];
 
 }

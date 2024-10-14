@@ -1,7 +1,7 @@
 #
 # Git - Version control
 #
-{ config, lib, ... }: with lib;
+{ config, lib, pkgs, ... }: with lib;
 let
   cfg = config.modules.git;
 in
@@ -9,6 +9,10 @@ in
   options.modules.git = { enable = mkEnableOption "git"; };
 
   config = mkIf cfg.enable {
+		home.packages = with pkgs; [
+			lazygit
+		];
+
     programs = {
       git = {
         enable = true;

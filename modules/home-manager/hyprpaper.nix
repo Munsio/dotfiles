@@ -39,7 +39,7 @@ in
   config = mkIf cfg.enable {
     services.hyprpaper = {
       enable = true;
-      package = pkgs.unstable.hyprpaper;
+      package = pkgs.hyprpaper;
       settings = {
         ipc = true;
         splash = false;

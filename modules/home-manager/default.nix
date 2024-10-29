@@ -18,6 +18,7 @@
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
+		./hyprpanel.nix
     ./hyprpaper.nix
 		./kanshi.nix
     ./kubernetes.nix

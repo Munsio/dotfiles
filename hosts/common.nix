@@ -90,6 +90,7 @@
       outputs.overlays.unstable-packages
       outputs.overlays.flake-wezterm
       inputs.nix-vscode-extensions.overlays.default
+			inputs.hyprpanel.overlay
     ];
     config.allowUnfree = true;
   };

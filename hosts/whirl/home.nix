@@ -16,7 +16,7 @@
 
   # Enable Modules
   modules = {
-    ags.enable = true;
+    ags.enable = false;
     alacritty.enable = true;
     ansible.enable = true;
     firefox.enable = true;
@@ -36,6 +36,7 @@
       ];
     };
     hyprlock.enable = true;
+		hyprpanel.enable = true;
     hyprpaper.enable = true;
 		kanshi.enable = true;
     kubernetes.enable = true;

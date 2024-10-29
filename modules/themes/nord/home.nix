@@ -6,7 +6,7 @@
 { pkgs, ... }:
 
 {
-  fonts.fontconfig.enableProfileFonts = true;
+  fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
     ## GTK

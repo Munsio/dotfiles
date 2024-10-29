@@ -17,7 +17,7 @@ in
   config = mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-			systemdIntegration = true;
+			systemd.enable = true;
 
       settings = {
         # Variables

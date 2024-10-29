@@ -14,7 +14,12 @@
 
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
-		hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+		ags.url = "github:Aylur/ags";
+		
+		hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     wezterm.url = "github:wez/wezterm?dir=nix";
   };

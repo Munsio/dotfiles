@@ -48,7 +48,7 @@
     vscode.enable = true;
     discord.enable = true;
     nvim.enable = true;
-		waybar.enable = true;
+		waybar.enable = false;
     wezterm.enable = true;
     yazi.enable = true;
   };

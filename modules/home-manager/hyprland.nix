@@ -51,7 +51,7 @@ in
         ];
         exec-once = [
           "hypridle"
-          "ags"
+          "hyprpanel"
           "sleep 2; randomWallpaper" # Wait until hyprpaper is fully loaded
         ];
         # Bindings
@@ -61,7 +61,7 @@ in
           "$mod SHIFT, W, exec, randomWallpaper"
           "$mod, L, exec, killall rofi || rofi -show power-menu"
           "ALT, Space, exec, killall rofi || rofi -show drun"
-          "$mod SHIFT, E, exec, kill $(pidof ags) || ags"
+          "$mod SHIFT, E, exec, kill $(pidof hyprpanel) || hyprpanel"
           "$mod CTRL, P, exec, toggleSonyHeadphones"
 
           # General window/behaviour binding

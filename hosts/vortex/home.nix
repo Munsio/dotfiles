@@ -34,6 +34,7 @@
       ];
     };
     hyprlock.enable = true;
+		hyprpanel.enable = true;
     hyprpaper.enable = true;
     kubernetes.enable = true;
     mako.enable = true;

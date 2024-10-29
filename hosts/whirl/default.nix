@@ -55,4 +55,6 @@
   programs.dconf.enable = true;
 
   services.blueman.enable = true;
+
+	services.upower.enable = true;
 }

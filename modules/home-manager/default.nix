@@ -23,6 +23,7 @@
 		./kanshi.nix
     ./kubernetes.nix
     ./mako.nix
+		./nushell.nix
     ./nvim
     ./obsidian.nix
     ./pywal

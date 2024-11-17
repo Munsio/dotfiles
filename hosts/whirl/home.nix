@@ -20,7 +20,7 @@
     alacritty.enable = true;
     ansible.enable = true;
     firefox.enable = true;
-    fish.enable = true;
+    fish.enable = false;
     git-autofixup.enable = true;
     git.enable = true;
     go.enable = true;
@@ -41,6 +41,7 @@
 		kanshi.enable = true;
     kubernetes.enable = true;
     mako.enable = true;
+		nushell.enable = true;
     obsidian.enable = true;
     pywal.enable = true;
     rofi.enable = true;

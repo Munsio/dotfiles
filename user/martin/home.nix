@@ -44,6 +44,11 @@ in
       userEmail = "martin@treml.dev";
       userName = "Martin Treml";
     };
+
+		direnv = {
+			enable = true;
+			enableNushellIntegration = true;
+		};
   };
 
   home = {

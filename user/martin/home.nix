@@ -60,8 +60,12 @@ in
       EDITOR = "vim";
     };
 
-    packages = [
+    packages = with pkgs; [
+			nmap
+			talosctl
       toggleSonyHeadphones
+			rustdesk
+			chromium
     ];
   };
 

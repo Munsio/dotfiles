@@ -46,7 +46,6 @@
   # Environment and standard packages
   environment = {
     systemPackages = with pkgs; [
-      direnv
       dmidecode
       killall
       nixpkgs-fmt
@@ -56,6 +55,7 @@
       usbutils
       vim
       wget
+			wl-clipboard
     ];
   };
 

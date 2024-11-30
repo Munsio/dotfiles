@@ -12,7 +12,7 @@ in
 		services = {
 			printing = {
 				enable = true;
-				browsed.enable = false;
+				browsed.enable = true;
 			};
 
 			avahi = {

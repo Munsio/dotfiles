@@ -2,11 +2,11 @@
   description = "Custom flake for Desktop, Laptop and Homelab VMs";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -17,8 +17,7 @@
 		ags.url = "github:Aylur/ags";
 		
 		hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel?ref=f21d70949f9f4426f39d12f542ec788d47330763";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:Jas-SinghFSU/HyprPanel";
     };
 
     wezterm.url = "github:wez/wezterm?dir=nix";
@@ -28,7 +27,7 @@
     let
       inherit (self) outputs;
 
-      os-channel = "24.05";
+      os-channel = "24.11";
 
       # Supported systems for your flake packages, shell, etc.
       systems = [

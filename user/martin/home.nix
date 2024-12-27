@@ -61,11 +61,14 @@ in
     };
 
     packages = with pkgs; [
+		  argocd
 			nmap
 			talosctl
+			cilium-cli
       toggleSonyHeadphones
 			rustdesk
 			chromium
+			dnsutils
     ];
   };
 

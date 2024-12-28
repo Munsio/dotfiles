@@ -77,14 +77,16 @@ in
           "$mod, down, movefocus, d"
 
           # Workspace special mods
-          "$mod SHIFT, right, movetoworkspace, e+1"
-          "$mod SHIFT, left, movetoworkspace, e-1"
+          "$mod SHIFT, right, movetoworkspace, r+1"
+          "$mod SHIFT, left, movetoworkspace, r-1"
 
           # Scroll through existing workspaces with $mod + scroll
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
-          "$mod CTRL, right, workspace, e+1 "
-          "$mod CTRL, left, workspace, e-1"
+          "$mod, mouse_down, workspace, r+1"
+          "$mod, mouse_up, workspace, r-1"
+          #"$mod CTRL, right, workspace, e+1 "
+          #"$mod CTRL, left, workspace, e-1 "
+          "$mod CTRL, right, workspace, m+1"
+					"$mod CTRL, left, workspace, m-1"
         ] ++ (
           # workspaces
           # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}

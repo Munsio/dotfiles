@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# if [ -z $(grep MUTED $(wpctl get-volume @DEFAULT_AUDIO_SINK@)) ]; then
-if [[ -z $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep MUTED) ]]; then
-    echo "false"
-else
-    echo "true"
-fi

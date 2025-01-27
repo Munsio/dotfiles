@@ -4,13 +4,12 @@
 { ... }: {
 
   imports = [
-    ./ags
-    ./alacritty.nix
-    ./ansible.nix
+		./fish.nix
+		./hyprpanel.nix
+		./kanshi.nix
+		./zoxide.nix
     ./discord.nix
-    ./eww
     ./firefox.nix
-    ./fish.nix
     ./git-autofixup.nix
     ./git.nix
     ./go.nix
@@ -18,19 +17,15 @@
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
-		./hyprpanel.nix
     ./hyprpaper.nix
-		./kanshi.nix
     ./kubernetes.nix
     ./mako.nix
-		./nushell.nix
     ./nvim
     ./obsidian.nix
     ./pywal
     ./rofi.nix
     ./starship.nix
     ./vscode.nix
-		./waybar
     ./wezterm/wezterm.nix
     ./yazi.nix
   ];

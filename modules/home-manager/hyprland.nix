@@ -11,6 +11,7 @@ in
     enable = mkEnableOption "hyprland";
     monitor = mkOption {
       type = (types.listOf types.str);
+			default = [];
     };
   };
 

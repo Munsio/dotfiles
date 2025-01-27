@@ -1,4 +1,4 @@
-#
+/* # */
 #  Home-manager configuration for User "martin"
 #
 
@@ -47,7 +47,6 @@ in
 
 		direnv = {
 			enable = true;
-			enableNushellIntegration = true;
 		};
   };
 
@@ -61,14 +60,23 @@ in
     };
 
     packages = with pkgs; [
-		  argocd
-			nmap
-			talosctl
-			cilium-cli
-      toggleSonyHeadphones
-			rustdesk
+			android-tools
+			autofs5
 			chromium
+			cilium-cli
 			dnsutils
+			jq
+			minigalaxy
+			nfs-utils
+			nmap
+			rustdesk
+			smartmontools
+			talosctl
+			unstable.ghostty
+			vlc
+			yq
+		  argocd
+      toggleSonyHeadphones
     ];
   };
 

@@ -6,8 +6,6 @@ let
   cfg = config.modules.hyprpaper;
 
   pywal = if config.modules.pywal.enable then ''wal -i ''${papers[$random]}'' else "";
-  eww = if config.modules.eww.enable then "eww reload" else "";
-  ags = if config.modules.ags.enable then ''ags -r "resetCss()"'' else "";
 
   randomWallpaper = pkgs.writeShellScriptBin "randomWallpaper" ''
     dir="$HOME/.config/wallpapers/" # The last / is important
@@ -29,8 +27,6 @@ let
     hyprctl hyprpaper wallpaper ",''${papers[$random]}"
 
     ${pywal}
-    ${eww}
-    ${ags}
   '';
 in
 {

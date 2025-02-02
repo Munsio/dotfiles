@@ -50,6 +50,22 @@ in
 						}
 					];
 				}
+				{
+					profile.name = "desk2";
+					profile.outputs = [
+						{
+							criteria = "AOC U34G2G1 0x00001BA3";
+							mode = "3440x1440@99.98";
+							#position = "-760,1080";
+							scale = 1.0;
+						}
+						{
+							criteria = "eDP-1";
+							status = "enable";
+							scale = 1.5;
+						}
+					];
+				}
 			];
 		};
   };

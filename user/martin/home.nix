@@ -41,7 +41,7 @@ in
 
   programs = {
     git = mkIf config.modules.git.enable {
-      userEmail = "martin@treml.dev";
+      userEmail = "git@treml.dev";
       userName = "Martin Treml";
     };
 

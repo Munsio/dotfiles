@@ -14,6 +14,10 @@ in
 			interactiveShellInit = ''
 				set fish_greeting # Disable greeting
 	    '';
+			shellAliases = {
+				os-update = "nh os switch -u -a";
+				kanshi-reload = "systemctl --user restart kanshi.service";
+			};
     };
   };
 }

@@ -20,6 +20,7 @@
     hyprland.enable = true;
     moonlight.enable = true;
 		printer.enable = true;
+		yubikey.enable = true;
   };
 
   boot = {

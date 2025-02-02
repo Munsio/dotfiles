@@ -9,6 +9,7 @@
     ./moonlight.nix
     ./nh.nix
 		./printer.nix
+		./yubikey.nix
   ];
 
 }

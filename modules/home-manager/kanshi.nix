@@ -56,13 +56,15 @@ in
 						{
 							criteria = "AOC U34G2G1 0x00001BA3";
 							mode = "3440x1440@99.98";
-							#position = "-760,1080";
+							position = "0,0";
 							scale = 1.0;
 						}
 						{
 							criteria = "eDP-1";
 							status = "enable";
-							scale = 1.5;
+							mode = "2880x1920@120.00";
+							position = "3440,220";
+							scale = 2.0;
 						}
 					];
 				}

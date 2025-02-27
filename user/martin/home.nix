@@ -55,7 +55,7 @@ in
     homeDirectory = "/home/martin";
 
     sessionVariables = {
-      TERMINAL = "wezterm";
+      TERMINAL = "ghostty";
       EDITOR = "vim";
     };
 
@@ -66,7 +66,6 @@ in
 			cilium-cli
 			dnsutils
 			jq
-			minigalaxy
 			nfs-utils
 			nmap
 			rustdesk

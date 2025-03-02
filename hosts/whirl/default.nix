@@ -24,7 +24,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_6_11; # Latest kernel
+    kernelPackages = pkgs.linuxPackages_6_12; # Latest kernel
 
     initrd.luks.devices."luks-c5ef7dea-9875-4d93-a0a4-b063c31d44e2".device = "/dev/disk/by-uuid/c5ef7dea-9875-4d93-a0a4-b063c31d44e2";
 

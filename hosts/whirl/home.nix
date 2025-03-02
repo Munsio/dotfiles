@@ -38,7 +38,7 @@
     rofi.enable = true;
     starship.enable = true;
     vscode.enable = true;
-    wezterm.enable = true;
+    #wezterm.enable = true;
     yazi.enable = true;
   };
 }

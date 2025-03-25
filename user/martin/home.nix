@@ -73,7 +73,7 @@ in
 			talosctl
 			unstable.ghostty
 			vlc
-			yq
+			yq-go
 		  argocd
       toggleSonyHeadphones
     ];
